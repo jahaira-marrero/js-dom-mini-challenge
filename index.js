@@ -18,8 +18,20 @@ const pic = document.querySelector(`img`)
 pic.alt = traveler.name
 pic.src = traveler.photo
 
-/***** Deliverable 4 *****/
-// Working on it...
 
-/***** Deliverable 5 *****/
-// Working on it...
+/***** Deliverable 4 *****/
+traveler.animalSightings.forEach(function(sighting) {
+  const li = document.createElement(`li`) // <li></li>
+    li.dataset.id= sighting.id
+    li.innerHTML = `<p>${sighting.description}</p>
+    <img src="${sighting.photo}" alt="${sighting.species}"/>
+    <a href="${sighting.link}" target="_blank">Here's a video about the ${sighting.species} species!</a>`;
+
+    const animalList = document.querySelector("#animals")
+    animalList.append(li)
+  })
+
+
+/***** Deliverable 5 ***/
+const removeAnimal = document.querySelector('[data-id="3"]')
+removeAnimal.remove()
